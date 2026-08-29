@@ -291,7 +291,6 @@ Compose 默认包含以下服务：
 - [API 接口文档](./docs/API文档.md)
 - [部署指南](./docs/DEPLOY.md)
 - [安全检查记录](./docs/API安全防护分析.md)
-- [项目规划](./docs/couple-app-plan.md)
 - [前端开发说明](./frontend/mini-program-plan.md)
 
 ## 许可证
