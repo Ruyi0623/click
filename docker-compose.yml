@@ -1,0 +1,80 @@
+services:
+  # MySQL 数据库
+  mysql:
+    image: mysql:8.0
+    container_name: click_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: click_app
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    # 不映射到主机，避免与服务器已有 MySQL 冲突
+    # 应用通过 Docker 内部网络 mysql:3306 连接
+    expose:
+      - "3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Redis 缓存
+  redis:
+    image: redis:7-alpine
+    container_name: click_redis
+    restart: always
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+
+  # FastAPI 应用
+  app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: click_app
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=mysql+pymysql://root:${MYSQL_ROOT_PASSWORD:-root123}@mysql:3306/click_app
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:?请在 .env 文件中设置 JWT_SECRET}
+      - JWT_EXPIRE_DAYS=7
+      - UPLOAD_DIR=./uploads
+      - UPLOAD_BASE_URL=${UPLOAD_BASE_URL:-https://localhost:8000/uploads}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT:-465}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - SMTP_FROM=${SMTP_FROM}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - CORS_ORIGINS=${CORS_ORIGINS:-}
+      - DEBUG_MODE=${DEBUG_MODE:-false}
+      - WECHAT_APPID=${WECHAT_APPID:-}
+      - WECHAT_SECRET=${WECHAT_SECRET:-}
+    volumes:
+      - upload_data:/app/uploads
+    depends_on:
+      - mysql
+      - redis
+
+  # Nginx 反向代理
+  nginx:
+    image: nginx:alpine
+    container_name: click_nginx
+    restart: always
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+      - upload_data:/var/www/uploads
+    depends_on:
+      - app
+
+volumes:
+  mysql_data:
+  redis_data:
+  upload_data:

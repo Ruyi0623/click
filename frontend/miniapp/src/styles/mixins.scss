@@ -1,0 +1,88 @@
+@use './variables.scss' as *;
+
+// 卡片
+@mixin card {
+  background: $bg-card;
+  border-radius: $radius-lg;
+  padding: $padding-card;
+  box-shadow: $shadow-sm;
+}
+
+// 主按钮
+@mixin btn-primary {
+  background: $gradient-heart;
+  color: $text-inverse;
+  border: none;
+  border-radius: $radius-full;
+  height: 96rpx;
+  padding: 0 64rpx;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  box-shadow: $shadow-glow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:active { transform: scale(0.96); box-shadow: none; }
+}
+
+// 次按钮
+@mixin btn-secondary {
+  background: transparent;
+  color: $heart-pink;
+  border: 2rpx solid $heart-pink;
+  border-radius: $radius-full;
+  height: 96rpx;
+  padding: 0 64rpx;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:active { background: $heart-pink-ghost; }
+}
+
+// 输入框
+@mixin input-field {
+  background: $bg-page;
+  border: 2rpx solid $border-light;
+  border-radius: $radius-base;
+  padding: 24rpx 32rpx;
+  font-size: $font-size-base;
+  color: $text-primary;
+  transition: all $duration-normal $ease-soft;
+  &:focus { border-color: $heart-pink-light; box-shadow: 0 0 0 4rpx rgba(255, 107, 138, 0.1); }
+  &::placeholder { color: $text-tertiary; }
+}
+
+// 标签
+@mixin tag($bg, $color) {
+  display: inline-flex;
+  align-items: center;
+  padding: 8rpx 24rpx;
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  background: $bg;
+  color: $color;
+}
+
+// 空状态
+@mixin empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 64rpx;
+}
+
+// 页面容器
+@mixin page {
+  min-height: 100vh;
+  background: $bg-page;
+  padding: 0 $padding-page $space-xxl;
+}
+
+// 安全区域底部
+@mixin safe-bottom {
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+}

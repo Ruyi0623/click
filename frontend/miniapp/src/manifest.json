@@ -1,0 +1,19 @@
+{
+  "name": "咔哒",
+  "appid": "",
+  "description": "咔哒 - 记录我们的每一天",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "wx7de9c294b95a9576",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "usingComponents": true
+  },
+  "vueVersion": "3"
+}

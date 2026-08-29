@@ -1,0 +1,80 @@
+{
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "咔哒", "navigationStyle": "custom" } },
+    { "path": "pages/login/index", "style": { "navigationBarTitleText": "登录", "navigationStyle": "custom" } },
+    { "path": "pages/album/index", "style": { "navigationBarTitleText": "相册" } },
+    { "path": "pages/album/collection", "style": { "navigationBarTitleText": "合集" } },
+    { "path": "pages/mine/index", "style": { "navigationBarTitleText": "我的", "navigationStyle": "custom" } }
+  ],
+  "subPackages": [
+    { "root": "pages/couple", "pages": [
+      { "path": "bind", "style": { "navigationBarTitleText": "配对", "navigationStyle": "custom" } },
+      { "path": "info", "style": { "navigationBarTitleText": "情侣信息" } }
+    ]},
+    { "root": "pages/anniversary", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "纪念日" } },
+      { "path": "create", "style": { "navigationBarTitleText": "新建纪念日" } }
+    ]},
+    { "root": "pages/wish", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "心愿清单" } }
+    ]},
+    { "root": "pages/mood", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "情侣日记" } }
+    ]},
+    { "root": "pages/capsule", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "星际邮局", "navigationBarBackgroundColor": "#E3F2FD", "navigationBarTextStyle": "black", "backgroundColor": "#E3F2FD" } },
+      { "path": "create", "style": { "navigationBarTitleText": "写一封信", "navigationBarBackgroundColor": "#E3F2FD", "navigationBarTextStyle": "black", "backgroundColor": "#E3F2FD" } },
+      { "path": "detail", "style": { "navigationBarTitleText": "信件详情", "navigationBarBackgroundColor": "#E3F2FD", "navigationBarTextStyle": "black", "backgroundColor": "#E3F2FD" } }
+    ]},
+    { "root": "pages/footprint", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "足迹", "navigationBarBackgroundColor": "#FFF0F2", "navigationBarTextStyle": "black" } },
+      { "path": "create", "style": { "navigationBarTitleText": "添加足迹", "navigationBarBackgroundColor": "#FFF0F2", "navigationBarTextStyle": "black" } },
+      { "path": "edit", "style": { "navigationBarTitleText": "编辑足迹", "navigationBarBackgroundColor": "#FFF0F2", "navigationBarTextStyle": "black" } }
+    ]},
+    { "root": "pages/magazine", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "恋爱月刊" } },
+      { "path": "detail", "style": { "navigationBarTitleText": "月刊详情" } }
+    ]},
+    { "root": "pages/fund", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "心愿存折", "navigationBarBackgroundColor": "#FFF8E1", "navigationBarTextStyle": "black" } },
+      { "path": "detail", "style": { "navigationBarTitleText": "存折详情", "navigationBarBackgroundColor": "#FFF8E1", "navigationBarTextStyle": "black" } }
+    ]},
+    { "root": "pages/transaction", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "恋爱账单" } },
+      { "path": "create", "style": { "navigationBarTitleText": "记一笔" } }
+    ]},
+    { "root": "pages/penalty", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "恋爱罚单", "navigationBarBackgroundColor": "#FFF0F2", "navigationBarTextStyle": "black" } },
+      { "path": "create", "style": { "navigationBarTitleText": "开罚单", "navigationBarBackgroundColor": "#FFF0F2", "navigationBarTextStyle": "black" } }
+    ]},
+    { "root": "pages/diary", "pages": [
+      { "path": "index", "style": { "navigationBarTitleText": "情侣日记", "navigationBarBackgroundColor": "#F8F3ED", "navigationBarTextStyle": "black" } },
+      { "path": "create", "style": { "navigationBarTitleText": "写日记", "navigationBarBackgroundColor": "#F8F3ED", "navigationBarTextStyle": "black" } }
+    ]}
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["pages/anniversary", "pages/wish"]
+    }
+  },
+  "tabBar": {
+    "color": "#9E9EB0",
+    "selectedColor": "#FF6B8A",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页", "iconPath": "static/tab-home.png", "selectedIconPath": "static/tab-home-active.png" },
+      { "pagePath": "pages/album/index", "text": "相册", "iconPath": "static/tab-album.png", "selectedIconPath": "static/tab-album-active.png" },
+      { "pagePath": "pages/mine/index", "text": "我的", "iconPath": "static/tab-mine.png", "selectedIconPath": "static/tab-mine-active.png" }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "咔哒",
+    "navigationBarBackgroundColor": "#FFF0F2",
+    "backgroundColor": "#FFF0F2",
+    "backgroundColorTop": "#FFF0F2",
+    "backgroundColorBottom": "#FFF0F2"
+  }
+}

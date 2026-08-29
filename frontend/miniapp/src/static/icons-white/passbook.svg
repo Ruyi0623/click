@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 存折封面 -->
+  <rect x="3" y="2" width="18" height="20" rx="2" fill="rgba(255,255,255,0.2)" stroke="#fff" stroke-width="1.5"/>
+  <!-- 顶部装饰条 -->
+  <rect x="3" y="2" width="18" height="6" rx="2" fill="rgba(255,255,255,0.3)" stroke="#fff" stroke-width="1.5"/>
+  <!-- 银行标志 -->
+  <circle cx="12" cy="5" r="2" fill="rgba(255,255,255,0.4)" stroke="#fff" stroke-width="1"/>
+  <!-- 横线 -->
+  <line x1="7" y1="12" x2="17" y2="12" stroke="#fff" stroke-width="1.2"/>
+  <line x1="7" y1="15" x2="17" y2="15" stroke="#fff" stroke-width="1.2"/>
+  <line x1="7" y1="18" x2="14" y2="18" stroke="#fff" stroke-width="1.2"/>
+</svg>

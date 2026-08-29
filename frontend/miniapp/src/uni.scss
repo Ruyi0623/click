@@ -1,0 +1,14 @@
+@use '@/styles/variables.scss' as *;
+@use '@/styles/animations.scss' as *;
+
+// Uni-app 内置变量覆盖
+$uni-color-primary: $heart-pink;
+$uni-color-success: $success;
+$uni-color-warning: $warning;
+$uni-color-error: $error;
+$uni-text-color: $text-primary;
+$uni-text-color-inverse: $text-inverse;
+$uni-text-color-grey: $text-tertiary;
+$uni-bg-color: $bg-card;
+$uni-bg-color-grey: $bg-page;
+$uni-border-color: $border-light;

@@ -1,0 +1,18 @@
+.claude/
+
+# Python
+backend/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local data and secrets
+.env
+*.env
+backend/test.db
+*.db
+
+# Build and archive artifacts
+backend/backend.zip
+frontend/miniapp/node_modules/
+frontend/miniapp/dist/

@@ -1,0 +1,291 @@
+// ========== 咔哒动画库 ==========
+@use './variables.scss' as *;
+
+// 心跳
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.05); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.05); }
+  70% { transform: scale(1); }
+}
+.animate-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+
+// 呼吸
+@keyframes breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+.animate-breathe { animation: breathe 3s ease-in-out infinite; }
+
+// 漂浮
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12rpx); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+// 闪烁
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.animate-twinkle { animation: twinkle 2s ease-in-out infinite; }
+
+// 渐入上移
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 300ms $ease-soft forwards; }
+
+// 弹性缩放
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in { animation: scaleIn 300ms $ease-spring forwards; }
+
+// 脉冲光晕
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 138, 0.4); }
+  70% { box-shadow: 0 0 0 20rpx rgba(255, 107, 138, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 138, 0); }
+}
+.animate-pulse-glow { animation: pulseGlow 2s infinite; }
+
+// 摇晃
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4rpx); }
+  20%, 40%, 60%, 80% { transform: translateX(4rpx); }
+}
+.animate-shake { animation: shake 300ms ease; }
+
+// 旋转
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin { animation: spin 1s linear infinite; }
+
+// 底部滑入
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.animate-slide-up { animation: slideUp 500ms $ease-soft; }
+
+// 恋爱天数揭示
+@keyframes revealDays {
+  0% { opacity: 0; transform: scale(0.5) rotate(-10deg); filter: blur(10px); }
+  60% { opacity: 1; transform: scale(1.1) rotate(2deg); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1) rotate(0); filter: blur(0); }
+}
+.animate-reveal-days { animation: revealDays 800ms $ease-spring forwards; }
+
+// 心形爆炸
+@keyframes heartExplode {
+  0% { opacity: 1; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(2); }
+}
+.animate-heart-explode { animation: heartExplode 800ms $ease-soft forwards; }
+
+// 胶囊开启
+@keyframes capsuleOpen {
+  0% { transform: scale(1) rotate(0); }
+  30% { transform: scale(1.1) rotate(-5deg); }
+  60% { transform: scale(0.95) rotate(3deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+.animate-capsule-open { animation: capsuleOpen 600ms $ease-bounce forwards; }
+
+// 淡入
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 300ms $ease-soft; }
+
+// ========== 方向性淡入 ==========
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-24rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-down { animation: fadeInDown 400ms $ease-soft forwards; }
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-24rpx); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in-left { animation: fadeInLeft 400ms $ease-soft forwards; }
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24rpx); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in-right { animation: fadeInRight 400ms $ease-soft forwards; }
+
+// ========== 弹性入场 ==========
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.6); }
+  60% { opacity: 1; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-zoom-in { animation: zoomIn 500ms $ease-spring forwards; }
+
+@keyframes elasticPop {
+  0% { opacity: 0; transform: scale(0.3); }
+  40% { transform: scale(1.1); }
+  60% { transform: scale(0.95); }
+  80% { transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-elastic-pop { animation: elasticPop 600ms forwards; }
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.08); }
+  70% { transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-bounce-in { animation: bounceIn 600ms $ease-soft forwards; }
+
+// ========== 按压反馈 ==========
+@keyframes pressDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+.animate-press { animation: pressDown 200ms $ease-soft; }
+
+// ========== 光泽扫过 ==========
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+// ========== 闪光 ==========
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+.animate-sparkle { animation: sparkle 1.5s $ease-soft infinite; }
+
+// ========== 爱心上升 ==========
+@keyframes loveRise {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-120rpx) scale(0.5); }
+}
+
+// ========== 霓虹闪烁 ==========
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 8rpx rgba(255, 107, 138, 0.4),
+                0 0 24rpx rgba(255, 107, 138, 0.2),
+                0 0 48rpx rgba(255, 107, 138, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 16rpx rgba(255, 107, 138, 0.6),
+                0 0 40rpx rgba(255, 107, 138, 0.3),
+                0 0 80rpx rgba(255, 107, 138, 0.15);
+  }
+}
+.animate-neon-pulse { animation: neonPulse 2s ease-in-out infinite; }
+
+// ========== 摇摆入场 ==========
+@keyframes wobble {
+  0% { transform: translateX(-100%); }
+  60% { transform: translateX(8%); }
+  80% { transform: translateX(-4%); }
+  100% { transform: translateX(0); }
+}
+.animate-wobble { animation: wobble 600ms $ease-soft forwards; }
+
+// ========== 柔和摇摆 ==========
+@keyframes softWobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+.animate-soft-wobble { animation: softWobble 1s ease-in-out; }
+
+// ========== 弹跳摇摆 ==========
+@keyframes bounceWobble {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.25); }
+  50% { transform: scale(0.9); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.animate-bounce-wobble { animation: bounceWobble 500ms $ease-soft; }
+
+// ========== 渐变背景 ==========
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+// ========== 成功打钩 ==========
+@keyframes successCheck {
+  0% { stroke-dashoffset: 100; opacity: 0; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+// ========== 数字脉冲 ==========
+@keyframes countPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); color: $heart-pink; }
+  100% { transform: scale(1); }
+}
+.animate-count-pulse { animation: countPulse 300ms $ease-spring; }
+
+// ========== 卡片滑入 ==========
+@keyframes cardSlideIn {
+  from { opacity: 0; transform: translateY(32rpx) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-card-slide { animation: cardSlideIn 400ms $ease-soft forwards; }
+
+// ========== 柔和滑入（更短距离） ==========
+@keyframes softSlideUp {
+  from { opacity: 0; transform: translateY(16rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-soft-slide { animation: softSlideUp 350ms $ease-soft forwards; }
+
+// ========== 轻微弹跳 ==========
+@keyframes softBounce {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-8rpx); }
+  60% { transform: translateY(4rpx); }
+  80% { transform: translateY(-2rpx); }
+  100% { transform: translateY(0); }
+}
+.animate-soft-bounce { animation: softBounce 500ms $ease-soft; }
+
+// ========== 延迟类 ==========
+.delay-1 { animation-delay: 50ms; }
+.delay-2 { animation-delay: 100ms; }
+.delay-3 { animation-delay: 150ms; }
+.delay-4 { animation-delay: 200ms; }
+.delay-5 { animation-delay: 250ms; }
+.delay-6 { animation-delay: 300ms; }
+.delay-7 { animation-delay: 350ms; }
+.delay-8 { animation-delay: 400ms; }
+.delay-9 { animation-delay: 450ms; }
+.delay-10 { animation-delay: 500ms; }
+.delay-11 { animation-delay: 550ms; }
+.delay-12 { animation-delay: 600ms; }

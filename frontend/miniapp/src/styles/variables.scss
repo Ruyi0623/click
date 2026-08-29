@@ -1,0 +1,122 @@
+// ========== 咔哒设计规范变量 ==========
+
+// 主色 — 心动粉
+$heart-pink: #FF6B8A;
+$heart-pink-light: #FF8FA3;
+$heart-pink-pale: #FFD6DE;
+$heart-pink-ghost: #FFF0F2;
+$heart-pink-dark: #E8527A;
+
+// 辅助色
+$sunrise-gold: #FFB347;
+$sunrise-gold-light: #FFD699;
+$sunrise-gold-pale: #FFF3E0;
+$lavender: #B39DDB;
+$lavender-light: #D1C4E9;
+$lavender-pale: #F3E5F5;
+$mint: #80CBC4;
+$mint-light: #B2DFDB;
+$mint-pale: #E0F2F1;
+$sky: #81D4FA;
+$sky-light: #B3E5FC;
+$sky-pale: #E1F5FE;
+$coral: #FF8A80;
+$coral-light: #FFCCBC;
+$coral-pale: #FBE9E7;
+
+// 功能色
+$success: #66BB6A;
+$warning: #FFB74D;
+$error: #EF5350;
+$info: #42A5F5;
+
+// 文字
+$text-primary: #2D2D3F;
+$text-secondary: #6B6B80;
+$text-tertiary: #9E9EB0;
+$text-inverse: #FFFFFF;
+
+// 背景
+$bg-page: #FFF0F2;
+$bg-card: #FFFFFF;
+$bg-elevated: #FFFFFF;
+$bg-mask: rgba(45, 45, 63, 0.5);
+
+// 边框
+$border-light: #FFE4E8;
+$border-normal: #FFD0D8;
+
+// 间距（8px 网格）
+$space-xs: 8rpx;
+$space-sm: 16rpx;
+$space-md: 24rpx;
+$space-base: 32rpx;
+$space-lg: 48rpx;
+$space-xl: 64rpx;
+$space-xxl: 96rpx;
+
+// 组件间距
+$padding-card: 32rpx;
+$padding-page: 32rpx;
+$gap-list: 24rpx;
+$gap-grid: 20rpx;
+
+// 圆角
+$radius-xs: 8rpx;
+$radius-sm: 12rpx;
+$radius-md: 16rpx;
+$radius-base: 24rpx;
+$radius-lg: 32rpx;
+$radius-xl: 48rpx;
+$radius-full: 9999rpx;
+
+// 阴影（粉色系）
+$shadow-sm: 0 2rpx 8rpx rgba(255, 107, 138, 0.08);
+$shadow-md: 0 4rpx 16rpx rgba(255, 107, 138, 0.12);
+$shadow-lg: 0 8rpx 32rpx rgba(255, 107, 138, 0.16);
+$shadow-xl: 0 16rpx 48rpx rgba(255, 107, 138, 0.20);
+$shadow-glow: 0 0 24rpx rgba(255, 107, 138, 0.30);
+$shadow-glow-lg: 0 0 48rpx rgba(255, 107, 138, 0.25);
+
+// 渐变
+$gradient-heart: linear-gradient(135deg, #FF6B8A 0%, #FF8FA3 100%);
+$gradient-dawn: linear-gradient(180deg, #FFF0F2 0%, #FFFFFF 100%);
+$gradient-sunset: linear-gradient(135deg, #FFB347 0%, #FF6B8A 100%);
+$gradient-starry: linear-gradient(135deg, #B39DDB 0%, #81D4FA 100%);
+$gradient-dream: linear-gradient(135deg, #FFD6DE 0%, #F3E5F5 100%);
+
+// 字体
+$font-family-base: 'PingFang SC', 'Helvetica Neue', sans-serif;
+$font-family-number: 'DIN Alternate', 'Roboto', monospace;
+
+// 字号
+$font-size-xs: 20rpx;
+$font-size-sm: 24rpx;
+$font-size-base: 28rpx;
+$font-size-md: 32rpx;
+$font-size-lg: 36rpx;
+$font-size-xl: 44rpx;
+$font-size-xxl: 56rpx;
+$font-size-display: 72rpx;
+$font-size-hero: 96rpx;
+
+// 字重
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// 行高
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.8;
+
+// 动画
+$ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+$ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+$duration-fast: 150ms;
+$duration-normal: 300ms;
+$duration-slow: 500ms;
+$duration-slower: 800ms;
