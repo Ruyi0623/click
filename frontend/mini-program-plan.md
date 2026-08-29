@@ -1,6 +1,6 @@
 # 📱 咔哒小程序 · 微信小程序开发规划
 
-> **基于** couple-app-plan.md v1.3 · **主体** 个人 · **框架** Uni-app + Vue 3 + TypeScript  
+> **主体** 个人 · **框架** Uni-app + Vue 3 + TypeScript
 > **后端** 已完成（80+ 测试通过）· **API 地址** https://api1.sparkcore.cn
 
 ---
@@ -9,7 +9,7 @@
 
 ### 1.1 原计划回顾
 
-根据 `couple-app-plan.md` 的规划：
+根据最初的产品规划：
 
 ```
 第四阶段 · 前端开发（待启动）
@@ -283,7 +283,7 @@ interface RequestOptions {
 export const request = <T = any>(options: RequestOptions): Promise<T> => {
   return new Promise((resolve, reject) => {
     const token = uni.getStorageSync('token')
-    
+
     uni.request({
       url: `${BASE_URL}${options.url}`,
       method: options.method || 'GET',
@@ -337,15 +337,15 @@ export interface AnniversaryCreate {
 export const anniversaryApi = {
   // 获取纪念日列表
   list: () => request<Anniversary[]>({ url: '/api/anniversaries' }),
-  
+
   // 创建纪念日
-  create: (data: AnniversaryCreate) => 
+  create: (data: AnniversaryCreate) =>
     request<Anniversary>({ url: '/api/anniversaries', method: 'POST', data }),
-  
+
   // 更新纪念日
   update: (id: string, data: Partial<AnniversaryCreate>) =>
     request<Anniversary>({ url: `/api/anniversaries/${id}`, method: 'PUT', data }),
-  
+
   // 删除纪念日
   delete: (id: string) =>
     request({ url: `/api/anniversaries/${id}`, method: 'DELETE' })
@@ -681,4 +681,4 @@ v2.0 — 聊天功能（需企业主体）
 
 **下一步**：初始化 Uni-app 项目，开始阶段一开发。
 
-*文档版本：v1.0 · 基于 couple-app-plan.md v1.3 · 2026 年 5 月*
+*文档版本：v1.0 · 2026 年 5 月*
